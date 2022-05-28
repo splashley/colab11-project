@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Poppins:wght@500;600&family=Manrope:wght@200;300;400&display=swap");
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+}
+
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 50px;
+}
+
+h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 50px;
+  font-weight: 500;
+  padding: 50px 0;
+}
+
+h4 {
+  margin: 0;
+}
+
+.page {
+  margin: 0 auto;
+  padding: 25px 10%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 200px;
+}
+
+.btn {
+  border-radius: 10px;
+  border: none;
+  padding: 10px 35px;
+  font-family: "Poppins", sans-serif;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+  font-size: 20px;
+}
+
+.btn--blue {
+  background-color: #2744ac;
+  color: white;
+  transition: background-color 1s ease-out 5ms;
+}
+
+.btn--blue:hover {
+  background-color: #6580e0;
+}
+
+.btn--nextsteps {
+  padding: 10px 150px;
+}
+
+.content {
+  text-align: center;
+  padding: 5% 0 0 0;
+}
+
+.steps {
+  display: flex;
+  align-items: center;
+}
+
+.steps-box {
+  display: flex;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.steps-number {
+  background: #2744ac;
+  font-family: "Poppins", sans-serif;
+  border-radius: 55px;
+  color: white;
+  font-size: 28px;
+  padding: 0px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.steps-number p {
+  margin: 0;
+}
+
+.steps-name {
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  padding: 5px;
+}
+
+.steps-description {
+  font-size: 1.9rem;
+  text-align: left;
+  margin-left: 50px;
+}
+
+.imgResume {
+  width: 700px;
+}
+
+.bottom-section {
+  padding: 0 0 50px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-section {
+  display: flex;
+  justify-content: space-between;
+}
