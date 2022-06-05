@@ -1,5 +1,11 @@
 import logo from "./assets/logo.png";
-import sideImg from "./assets/resume.jpg";
+
+import Home from "./routes/Home";
+import ScanJobDescription from "./routes/ScanJobDescription";
+
+import { Route, Routes, Outlet } from "react-router-dom";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 function App() {
   return (
@@ -9,95 +15,69 @@ function App() {
           <img src={logo} className="logo" alt="Right Your Resume" />
         </div>
         <div>
-          <button className="btn btn--blue">Feedback</button>
+          <Popup
+    trigger={<button className="btn btn--blue">Feedback</button>}
+    modal
+    nested
+  >
+    {close => (
+      <div className="modal">
+        <button className="close" onClick={close}>
+          &times;
+        </button>
+        <div className="header"> Modal Title </div>
+        <div className="content">
+          {' '}
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, a nostrum.
+          Dolorem, repellat quidem ut, minima sint vel eveniet quibusdam voluptates
+          delectus doloremque, explicabo tempore dicta adipisci fugit amet dignissimos?
+          <br />
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur sit
+          commodi beatae optio voluptatum sed eius cumque, delectus saepe repudiandae
+          explicabo nemo nam libero ad, doloribus, voluptas rem alias. Vitae?
         </div>
-      </header>
-      <div className="content">
-        <div style={{padding: "0 5%"}}>
-        <h2>
-          We scan job descriptions and give you concrete examples for
-          highlighting your transferable skills.
-        </h2>
-        </div>
-        <div className="steps">
-          <div>
-            <div className="steps-box">
-              <div>
-                <div className="steps-number">
-                  <p>1</p>
-                </div>
-                <div className="steps-name">
-                  <h4>Scan</h4>
-                </div>
-              </div>
-              <div className="steps-description">
-                <p>We can job descriptions for keywords</p>
-              </div>
-            </div>
-            <div className="steps-box">
-              <div>
-                <div className="steps-number">
-                  <p>2</p>
-                </div>
-                <div className="steps-name">
-                  <h4>Identify</h4>
-                </div>
-              </div>
-              <div className="steps-description">
-                <p>So you can use them to identify your transferable skills</p>
-              </div>
-            </div>
-            <div className="steps-box">
-              <div>
-                <div className="steps-number">
-                  <p>3</p>
-                </div>
-                <div className="steps-name">
-                  <h4>Phrase</h4>
-                </div>
-              </div>
-              <div className="steps-description">
-                <p>
-                  We can even show you examples of how to phrase the skills from
-                  real resumes that landed interviews
-                </p>
-              </div>
-            </div>
-            <div className="steps-box">
-              <div>
-                <div className="steps-number">
-                  <p>4</p>
-                </div>
-                <div className="steps-name">
-                  <h4>Apply</h4>
-                </div>
-              </div>
-              <div className="steps-description">
-                <p>So you can apply with confidence</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <img
-              src={sideImg}
-              alt="Man Writing a Resume"
-              className="imgResume"
-            />
-          </div>
-        </div>
-        <div className="bottom-section">
-          <h3>Your Transferable Skills at Work</h3>
-          <div className="btn-section">
-            <button className="btn btn--nextsteps btn--blue">
-              Scan a Job Description
-            </button>
-            <button className="btn btn--nextsteps btn--blue">
-              Check out TBD
-            </button>
-          </div>
+        <div className="actions">
+          <Popup
+            trigger={<button className="button"> Trigger </button>}
+            position="top center"
+            nested
+          >
+            <span>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
+              magni omnis delectus nemo, maxime molestiae dolorem numquam
+              mollitia, voluptate ea, accusamus excepturi deleniti ratione
+              sapiente! Laudantium, aperiam doloribus. Odit, aut.
+            </span>
+          </Popup>
+          <button
+            className="button"
+            onClick={() => {
+              console.log('modal closed ');
+              close();
+            }}
+          >
+            close modal
+          </button>
         </div>
       </div>
-      <footer></footer>
+    )}
+  </Popup>
+        </div>
+      </header>
+      <Outlet />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/scanjobdescription" element={<ScanJobDescription />} />
+        <Route
+          path="*"
+          element={
+            <main>
+              <p>There's nothing here!</p>
+            </main>
+          }
+        />
+      </Routes>
+      <footer>Right Your Resume © 2022</footer>
     </div>
   );
 }
