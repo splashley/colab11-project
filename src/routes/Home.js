@@ -17,7 +17,7 @@ export default function Home() {
         <div className="steps">
           <div>
             <div className="steps-box">
-              <div>
+              <div className="steps-details">
                 <div className="steps-number">
                   <p>1</p>
                 </div>
@@ -30,7 +30,7 @@ export default function Home() {
               </div>
             </div>
             <div className="steps-box">
-              <div>
+              <div className="steps-details">
                 <div className="steps-number">
                   <p>2</p>
                 </div>
@@ -43,7 +43,7 @@ export default function Home() {
               </div>
             </div>
             <div className="steps-box">
-              <div>
+              <div className="steps-details">
                 <div className="steps-number">
                   <p>3</p>
                 </div>
@@ -59,7 +59,7 @@ export default function Home() {
               </div>
             </div>
             <div className="steps-box">
-              <div>
+              <div className="steps-details">
                 <div className="steps-number">
                   <p>4</p>
                 </div>
@@ -76,12 +76,12 @@ export default function Home() {
             <img
               src={sideImg}
               alt="Man Writing a Resume"
-              className="imgResume"
+              className="img-resume"
             />
           </div>
         </div>
         <div className="bottom-section">
-          <h3>Your Transferable Skills at Work</h3>
+          <h5>Your Transferable Skills at Work</h5>
           <div className="btn-section">
             <button className="btn btn--nextsteps btn--blue">
               <Link to="/scanjobdescription">Scan a Job Description</Link>

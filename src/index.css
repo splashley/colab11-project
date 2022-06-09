@@ -23,6 +23,15 @@ h4 {
   margin: 0;
 }
 
+h5 {
+  font-family: "Poppins", sans-serif;
+
+}
+
+a {
+  text-decoration: none;
+}
+
 .page {
   margin: 0 auto;
   padding: 25px 15%;
@@ -45,6 +54,10 @@ h4 {
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
     rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
   font-size: 20px;
+}
+
+.btn a {
+  color: white;
 }
 
 .btn--blue {
@@ -107,7 +120,7 @@ h4 {
   margin-left: 50px;
 }
 
-.imgResume {
+.img-resume {
   width: 700px;
 }
 
@@ -120,4 +133,227 @@ h4 {
 .btn-section {
   display: flex;
   justify-content: space-between;
+}
+
+@media screen and (max-width: 1440px) {
+  h2 {
+    font-size: 2.1rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  h5 {
+    font-size: 1.5rem;
+  }
+
+  .page {
+    padding: 25px 10%;
+  }
+  .logo {
+    width: 200px;
+  }
+
+  .btn {
+    font-size: 22px;
+  }
+
+  .steps-box {
+    height: 70px;
+    margin: 70px 0;
+  }
+
+  .steps-details {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+  }
+  
+  .steps-number {
+    font-size: 1.4rem;
+    width: 70px;
+    height: 70px;
+  }
+
+  .steps-name {
+    font-size: 1.1rem;
+    width: 150px;
+  }
+  
+  .steps-description {
+    font-size: 1.5rem;
+    margin-left: 20px;
+  }
+  
+  .img-resume {
+    width: 425px;
+  }
+
+  .btn-section {
+    flex-direction: row
+  }
+
+  .btn--nextsteps {
+    margin-bottom: 20px;
+  }
+}
+
+/* Tablet View */
+@media screen and (max-width: 992px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+    padding: 25px 0;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  .page {
+    padding: 25px 5%;
+  }
+
+  .logo {
+    width: 170px;
+  }
+
+  .btn {
+    font-size: 18px;
+  }
+
+  .steps {
+    flex-direction: row;
+  }
+
+  .steps-box {
+    height: 70px;
+  }
+
+  .steps-details {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+  }
+  
+  .steps-number {
+    font-size: 1.1rem;
+    width: 50px;
+    height: 50px;
+  }
+
+  .steps-name {
+    font-size: 1rem;
+    padding: 5px;
+    width: 50px;
+  }
+  
+  .steps-description {
+    font-size: 1.2rem;
+    margin-left: 30px;
+  }
+  
+  .img-resume {
+    width: 300px;
+  }
+
+  .bottom-section {
+    padding: 0 0 20px 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn-section {
+    flex-direction: column;
+  }
+
+  .btn--nextsteps {
+    margin-bottom: 20px;
+  }
+}
+
+/* Mobile View */
+@media screen and (max-width: 600px) {
+  h2 {
+    font-size: 1rem;
+  }
+  
+  h3 {
+    font-size: 1rem;
+    padding: 25px 0;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  .page {
+    padding: 25px 5%;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
+
+  .btn--nextsteps {
+    padding: 10px 25px;
+  }
+
+  .steps {
+    flex-direction: column-reverse;
+  }
+
+  .steps-box {
+    margin: 20px 0;
+    height: 80px;
+  }
+
+  .steps-details {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+  }
+  
+  .steps-number {
+    font-size: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .steps-name {
+    font-size: 1rem;
+    padding: 5px;
+    width: 50px;
+  }
+  
+  .steps-description {
+    font-size: 1rem;
+    margin-left: 30px;
+  }
+  
+  .img-resume {
+    width: 220px;
+  }
+
+  .bottom-section {
+    padding: 0 0 20px 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn-section {
+    flex-direction: column;
+  }
+
+  .btn--nextsteps {
+    margin-bottom: 20px;
+  }
 }
