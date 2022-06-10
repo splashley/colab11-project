@@ -6,6 +6,7 @@ import ScanJobDescription from "./routes/ScanJobDescription";
 import { Route, Routes, Outlet } from "react-router-dom";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
+import Results from "./routes/Results";
 
 function App() {
   return (
@@ -71,6 +72,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/scanjobdescription" element={<ScanJobDescription />} />
+        <Route path="/results" element={<Results />} />
         <Route
           path="*"
           element={

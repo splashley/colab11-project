@@ -86,9 +86,9 @@ export default function Home() {
             <button className="btn btn--nextsteps btn--blue">
               <Link to="/scanjobdescription">Scan a Job Description</Link>
             </button>
-            <button className="btn btn--nextsteps btn--blue">
+            {/* <button className="btn btn--nextsteps btn--blue">
               Check out TBD
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

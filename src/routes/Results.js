@@ -1,10 +1,14 @@
 import * as React from 'react';
 
+import { useLocation } from 'react-router-dom';
+
 export default function Results() {
+  const { state } = useLocation();
+
   return (
-    <main style={{textAlign: "center"}}>
-      <h2>Let’s look at the keywords in context of the job description</h2>
-      <button className="btn btn--blue">Examples</button>
+    <main className="results-data" style={{textAlign: "center"}}>
+      <h2>Results</h2>
+      <p>{state.data}</p>
     </main>
   );
 }
