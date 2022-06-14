@@ -1,33 +1,42 @@
 import * as React from "react";
 import axios from "axios";
 
-import Spinner from './Spinner';
+import Spinner from "./Spinner";
 
 import { useNavigate } from "react-router-dom";
 
 export default function ScanJobDescription() {
   const [loading, setLoading] = React.useState(false);
+  const apiKey = "47aa983e-7f4a-4ecf-abae-f2ca9cd4c59f";
 
   let navigate = useNavigate();
 
   function handleJobDescription(el) {
     el.preventDefault();
     setLoading(true);
-    const options = {
+    const config = {
       method: "POST",
-      url: "https://tldrthis.p.rapidapi.com/v1/model/abstractive/summarize-text/",
+      url: "https://api.oneai.com/api/v0/pipeline",
       headers: {
-        "content-type": "application/json",
-        "X-RapidAPI-Key": "f06dd54ff1msh660447096c187d3p1aec73jsnf7cd78cee375",
-        "X-RapidAPI-Host": "tldrthis.p.rapidapi.com",
+        "api-key": apiKey,
+        "Content-Type": "application/json",
       },
-      data: { text: el.target[0].value, min_length: 100, max_length: 300 },
+      data: {
+        input: el.target[0].value,
+        input_type: "article",
+        steps: [
+          {
+            skill: "keywords",
+          },
+        ],
+      },
     };
 
     axios
-      .request(options)
+      .request(config)
       .then(function (response) {
-        navigate('/results', {state: {data: response.data.summary}})
+        console.log(JSON.stringify(response.data));
+        navigate("/results", { state: { data: response.data.summary } });
       })
       .catch(function (error) {
         console.error("error", error);

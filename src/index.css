@@ -166,6 +166,58 @@ footer {
 .results-data {
   padding: 50px 0 0 0;
 }
+
+.popup-content {
+  border-radius: 5px;
+  width: 75% !important;
+}
+
+.modal {
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-header {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.modal-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-content textarea {
+  width: 120%;
+  height: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 20px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.modal-close {
+  text-align: right;
+  width: 100%;
+  padding: 0;
+}
+
+.btn--modal-close {
+  border: none;
+  background-color: white;
+  font-size: 2rem;
+}
 @media screen and (max-width: 1440px) {
   h2 {
     font-size: 2.1rem;
