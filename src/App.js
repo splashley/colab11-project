@@ -19,7 +19,7 @@ function App() {
   const submitFeedback = (element) => {
     element.preventDefault();
     axios
-      .post("/handleFeedback", {
+      .post("http://localhost:3001/api/handlefeedback", {
         feedbackRating: feedbackRating,
         feedback: element.target[0].value,
       })
