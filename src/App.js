@@ -8,6 +8,7 @@ import "reactjs-popup/dist/index.css";
 import Results from "./routes/Results";
 import ReactStars from "react-stars";
 import axios from "axios";
+import IdentifyKeywords from "./routes/IdentifyPrioritizedKeywords";
 
 function App() {
   let feedbackRating = "";
@@ -19,7 +20,7 @@ function App() {
   const submitFeedback = (element) => {
     element.preventDefault();
     axios
-      .post("http://localhost:3001/api/handlefeedback", {
+      .post("https://rightyourresume.netlify.app/api/handlefeedback", {
         feedbackRating: feedbackRating,
         feedback: element.target[0].value,
       })
@@ -76,6 +77,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route path="/scanjobdescription" element={<ScanJobDescription />} />
         <Route path="/results" element={<Results />} />
+        <Route path="/identifyprioritizedkeywords" element={<IdentifyKeywords />} />
         <Route
           path="*"
           element={
