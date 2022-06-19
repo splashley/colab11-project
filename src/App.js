@@ -9,6 +9,7 @@ import Results from "./routes/Results";
 import ReactStars from "react-stars";
 import axios from "axios";
 import IdentifyKeywords from "./routes/IdentifyPrioritizedKeywords";
+import Details from "./routes/Details";
 
 function App() {
   let feedbackRating = "";
@@ -78,11 +79,12 @@ function App() {
         <Route path="/scanjobdescription" element={<ScanJobDescription />} />
         <Route path="/results" element={<Results />} />
         <Route path="/identifyprioritizedkeywords" element={<IdentifyKeywords />} />
+        <Route path="/details" element={<Details />} />
         <Route
           path="*"
           element={
             <main>
-              <p>There's nothing here!</p>
+              <h1>Error 404 - There's nothing here!</h1>
             </main>
           }
         />
