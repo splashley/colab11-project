@@ -41,10 +41,10 @@ export default function Details() {
 
 const selectedJobDescriptions = [];
 
-jobDetails.map((jobDescription) => {
+jobDetails.forEach((jobDescription) => {
     if (jobDescription.role === state.data.role) {
-        jobDescription[state.data.experienceLevel].map((experienceDescription) => {
-            selectedJobDescriptions.push(experienceDescription);
+       jobDescription[state.data.experienceLevel].map((experienceDescription) => {
+            return selectedJobDescriptions.push(experienceDescription);
         });
     }
 });
