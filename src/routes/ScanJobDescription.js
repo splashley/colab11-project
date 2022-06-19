@@ -10,37 +10,68 @@ export default function ScanJobDescription() {
   const apiKey = "47aa983e-7f4a-4ecf-abae-f2ca9cd4c59f";
 
   let navigate = useNavigate();
+  let keywords = [];
 
-  function handleJobDescription(el) {
-    el.preventDefault();
-    setLoading(true);
-    const config = {
-      method: "POST",
-      url: "https://api.oneai.com/api/v0/pipeline",
-      headers: {
-        "api-key": apiKey,
-        "Content-Type": "application/json",
-      },
-      data: {
-        input: el.target[0].value,
-        input_type: "article",
-        steps: [
-          {
-            skill: "keywords",
-          },
-        ],
-      },
-    };
+  async function handleJobDescription(el) {
+    try {
+      el.preventDefault();
+      setLoading(true);
+      const config = {
+        method: "POST",
+        url: "https://api.oneai.com/api/v0/pipeline",
+        headers: {
+          "api-key": apiKey,
+          "Content-Type": "application/json",
+        },
+        data: {
+          input: el.target[0].value,
+          input_type: "article",
+          steps: [
+            {
+              skill: "keywords",
+            },
+          ],
+        },
+      };
 
-    axios
-      .request(config)
-      .then(function (response) {
-        console.log(JSON.stringify(response.data));
-        navigate("/results", { state: { data: response.data.summary } });
-      })
-      .catch(function (error) {
-        console.error("error", error);
-      });
+      const options = {
+        method: "POST",
+        url: "https://tldrthis.p.rapidapi.com/v1/model/abstractive/summarize-text/",
+        headers: {
+          "content-type": "application/json",
+          "X-RapidAPI-Key":
+            "f06dd54ff1msh660447096c187d3p1aec73jsnf7cd78cee375",
+          "X-RapidAPI-Host": "tldrthis.p.rapidapi.com",
+        },
+        data: { text: el.target[0].value, min_length: 100, max_length: 300 },
+      };
+
+      await axios
+        .request(config)
+        .then(function (response) {
+          let data = response.data.output[0].labels;
+          data.forEach((item) => {
+            keywords.push(item.name);
+          });
+          console.log(keywords);
+        })
+        .catch(function (error) {
+          console.error("error", error);
+        });
+
+      await axios
+        .request(options)
+        .then(function (response) {
+          navigate("/results", {
+            state: { data: response.data.summary, keywords: keywords },
+          });
+        })
+        .catch(function (error) {
+          console.error("error", error);
+        });
+    } catch (error) {
+      console.log(error);
+    }
   }
   return loading ? (
     <Spinner />
@@ -59,7 +90,6 @@ export default function ScanJobDescription() {
         <br />
         <button className="btn btn--blue">Submit</button>
       </form>
-      {/* {returnResults ? <Results loading={loading} data={handleData} /> : null} */}
     </main>
   );
 }
