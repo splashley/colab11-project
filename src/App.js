@@ -34,7 +34,7 @@ function App() {
     <div className="page">
       <header className="header">
         <div>
-          <img src={logo} className="logo" alt="Right Your Resume" />
+          <a href="/"><img src={logo} className="logo" alt="Right Your Resume" /></a>
         </div>
         <div>
           <Popup
